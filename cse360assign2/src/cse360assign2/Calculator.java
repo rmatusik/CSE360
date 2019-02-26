@@ -15,12 +15,14 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * Sole class constructor. Creates a calculator object.
 	 */
 	public Calculator () {
-		total = 0;  
+		total = 0;
+		history = "0";
 	}
 	
 	/**
@@ -40,6 +42,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		history += (" + " + value);
 	}
 	
 	/**
@@ -49,6 +52,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history += (" - " + value );
 	}
 	
 	/**
@@ -58,6 +62,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history += (" * " + value);
 	}
 	
 	/**
@@ -74,6 +79,7 @@ public class Calculator {
 		else {
 			total /= value;
 		}
+		history += (" / " + value);
 	}
 	
 	/**
@@ -84,6 +90,6 @@ public class Calculator {
 	 * 			calculator actions
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
